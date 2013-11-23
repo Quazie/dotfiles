@@ -21,6 +21,12 @@ function mkd() {
 	mkdir -p "$@" && cd "$@"
 }
 
+# Get the git remote branch
+function get_git_remote_branch() {
+    git rev-parse --abbrev-ref --symbolic-full-name @{u}
+}
+
+
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
