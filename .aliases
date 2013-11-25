@@ -148,3 +148,5 @@ alias chall="git log --branches  --not --remotes --simplify-by-decoration --deco
 alias timesheet="git log --oneline --author="`git config --get Quazie.Kwaselow`" --since='6am'"
 
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+alias editmerged='${EDITOR} `git status|grep "both modified"|cut -d: -f2`'

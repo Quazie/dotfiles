@@ -108,7 +108,7 @@ PathShort="\w"
 #This PS1 Snippet is adapted from https://github.com/paulirish/dotfiles/blob/master/.bash_prompt
 function git_info() {
         # check if we're in a git repo
-        git rev-parse --is-inside-work-tree &>/dev/null || return
+        git rev-parse --is-inside-work-tree &> /dev/null 2>&1 || return
 
         # quickest check for what branch we're on
         branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
@@ -126,7 +126,7 @@ function git_info() {
 
 function git_color() {
     # check if we're in a git repo
-    git rev-parse --is-inside-work-tree &>/dev/null 2>&1 || return
+    git rev-parse --is-inside-work-tree &> /dev/null 2>&1 || return
 
     # Dirty for me means anything checked out - updated
     $(echo `git status 2> /dev/null | tail -n1` | grep "working directory clean" &>/dev/null)
