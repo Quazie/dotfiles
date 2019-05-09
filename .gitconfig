@@ -185,3 +185,8 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[user]
+	name = Quazie Kwaselow
+	email = qbarahal@lyft.com
+

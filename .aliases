@@ -149,3 +149,20 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Git Stuff
+alias mc='git status'
+alias pull='git fetch'
+alias fetch='git fetch'
+alias merge='git rebase'
+alias rebase='git rebase'
+alias update='git pull --rebase'
+
+alias ch="git log --oneline \$(get_git_remote_branch)..HEAD"
+alias chall="git log --branches  --not --remotes --simplify-by-decoration --decorate --oneline"
+
+alias timesheet="git log --oneline --author="`git config --get Quazie.Kwaselow`" --since='6am'"
+
+alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+alias editmerged='${EDITOR} `git status|grep "both modified"|cut -d: -f2`'
